@@ -50,14 +50,14 @@
     "LoopZero"
   ],
   "peerDependencies": {
-    "@getloopscale/loopzero-di": "^0.1.0-next.0 || ^0.2.0",
-    "@getloopscale/loopzero-sdk": "^1.3.0",
+    "@getloopscale/loopzero-di": ">=0.1.1 <0.3",
+    "@getloopscale/loopzero-sdk": ">=4.0.1 <5",
     "reflect-metadata": "^0.2.0"
   },
   "devDependencies": {
     "@swc/core": "^1.15.40",
     "@getloopscale/loopzero-di": "workspace:*",
-    "@getloopscale/loopzero-sdk": "^1.9.0",
+    "@getloopscale/loopzero-sdk": "^4.57.0",
     "reflect-metadata": "^0.2.0",
     "tsup": "^8.5.0",
     "typedoc": "^0.28.19",
