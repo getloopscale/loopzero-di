@@ -52,13 +52,13 @@
   ],
   "peerDependencies": {
     "@getloopscale/loopzero-di": ">=0.1.1 <0.3",
-    "@getloopscale/loopzero-sdk": ">=4.0.1 <5",
+    "@getloopscale/loopzero-sdk": ">=4.0.1 <6",
     "reflect-metadata": "^0.2.0"
   },
   "devDependencies": {
     "@swc/core": "^1.15.40",
     "@getloopscale/loopzero-di": "workspace:*",
-    "@getloopscale/loopzero-sdk": "^4.57.0",
+    "@getloopscale/loopzero-sdk": "^5.9.0",
     "reflect-metadata": "^0.2.0",
     "tsup": "^8.5.0",
     "typedoc": "^0.28.19",
