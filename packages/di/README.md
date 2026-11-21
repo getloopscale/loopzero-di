@@ -56,6 +56,30 @@ const greeter = container.resolve(GreeterService);
 console.log(greeter.greet("world")); // Hello, world!
 ```
 
+## Request seed
+
+`runInRequest` accepts a seed, the value the request serves (an inbound message, an HTTP request, a
+session key). Read it with `container.requestSeed()` from any REQUEST-scoped factory or code running
+inside the request. Nested requests each see their own seed.
+
+```typescript
+import { Container, Scope } from "@getloopscale/loopzero-di";
+
+const container = new Container();
+container.register({
+  provide: "session",
+  useFactory: () => ({ key: container.requestSeed<string>() }),
+  scope: Scope.REQUEST,
+});
+
+const session = await container.runInRequest(() => container.resolveAsync("session"), {
+  seed: "user-42",
+});
+```
+
+`requestSeed()` throws `ScopeViolationError` outside a request, and `MissingRequestSeedError` in a
+request opened without `{ seed }`.
+
 ## Polyglot strategy
 
 `@getloopscale/loopzero-di` is **intentionally TS-only**. DI containers are language-specific runtime constructs — Python uses `inspect`/`typing.get_type_hints`, Go uses `reflect`, etc. The cross-language story for the loopzero ecosystem lives in the **contract layer** (OpenAPI from `@getloopscale/loopzero-http`, SQL migrations + JSON schemas from `@getloopscale/loopzero-orm`), not in the container.
