@@ -51,7 +51,7 @@
     "LoopZero"
   ],
   "peerDependencies": {
-    "@getloopscale/loopzero-di": ">=0.1.1 <0.3",
+    "@getloopscale/loopzero-di": ">=0.3.0 <0.4",
     "@getloopscale/loopzero-sdk": ">=4.0.1 <6",
     "reflect-metadata": "^0.2.0"
   },
