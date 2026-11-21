@@ -1,5 +1,5 @@
 ---
-"@getloopscale/loopzero-di": minor
+"@getloopscale/loopzero-di": patch
 ---
 
 `Container.runInRequest(callback, { seed })` carries a per-request value, read with
