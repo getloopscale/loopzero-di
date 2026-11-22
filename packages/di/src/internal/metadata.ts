@@ -2,6 +2,10 @@
  * Single source of truth for the metadata keys our decorators write and
  * the container reads. Keeping them here means container.ts and
  * decorators/*.ts agree on the wire format.
+ *
+ * The 16 agent keys (`SANDBOX` through `MEMORY_SCOPE`) are not read by the
+ * container. They are kept for compatibility only and are deprecated;
+ * `@getloopscale/loopzero-di-agent` owns them as `AGENT_METADATA_KEYS`.
  */
 
 import type { ClassConstructor, Scope, Token } from "../types.js";
@@ -23,37 +27,101 @@ export const METADATA_KEYS = {
   POST_CONSTRUCT: "getloopscale:di:post-construct",
   /** string | symbol from `@PreDestroy` method decorator. */
   PRE_DESTROY: "getloopscale:di:pre-destroy",
-  /** Map<string|symbol, SandboxOptions> from `@UseSandbox()` property decorator. */
+  /**
+   * Map<string|symbol, SandboxOptions> from `@UseSandbox()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   SANDBOX: "getloopscale:di:sandbox",
-  /** Map<string|symbol, SubAgentSpec> from `@SubAgent()` property decorator. */
+  /**
+   * Map<string|symbol, SubAgentSpec> from `@SubAgent()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   SUBAGENT: "getloopscale:di:subagent",
-  /** Map<string|symbol, SquadMetadata> from `@Squad()` property decorator. */
+  /**
+   * Map<string|symbol, SquadMetadata> from `@Squad()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   SQUAD: "getloopscale:di:squad",
-  /** Map<string|symbol, StepMetadata> from `@Step()` method decorator. */
+  /**
+   * Map<string|symbol, StepMetadata> from `@Step()` method decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   STEP: "getloopscale:di:step",
-  /** Map<string|symbol, HitlMetadata> from `@Hitl()` method decorator. */
+  /**
+   * Map<string|symbol, HitlMetadata> from `@Hitl()` method decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   HITL: "getloopscale:di:hitl",
-  /** AutoSummarizeConfig from `@AutoSummarize()` class decorator. */
+  /**
+   * AutoSummarizeConfig from `@AutoSummarize()` class decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   AUTO_SUMMARIZE: "getloopscale:di:auto-summarize",
-  /** Map<string|symbol, ToolOptions> from `@Tool()` property decorator. */
+  /**
+   * Map<string|symbol, ToolOptions> from `@Tool()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   TOOL: "getloopscale:di:tool",
-  /** WorkflowOptions from `@Workflow()` class decorator. */
+  /**
+   * WorkflowOptions from `@Workflow()` class decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   WORKFLOW: "getloopscale:di:workflow",
-  /** EvalOptions from `@Eval()` class decorator. */
+  /**
+   * EvalOptions from `@Eval()` class decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   EVAL: "getloopscale:di:eval",
-  /** Map<string|symbol, CronMetadata> from `@Cron()` method decorator. */
+  /**
+   * Map<string|symbol, CronMetadata> from `@Cron()` method decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   CRON: "getloopscale:di:cron",
-  /** Map<string|symbol, SubscriptionOptions> from `@Subscription()` property decorator. */
+  /**
+   * Map<string|symbol, SubscriptionOptions> from `@Subscription()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   SUBSCRIPTION: "getloopscale:di:subscription",
-  /** AuthOptions from `@Auth()` class decorator. */
+  /**
+   * AuthOptions from `@Auth()` class decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   AUTH: "getloopscale:di:auth",
-  /** Map<string|symbol, RetrieverOptions> from `@Retriever()` property decorator. */
+  /**
+   * Map<string|symbol, RetrieverOptions> from `@Retriever()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   RETRIEVER: "getloopscale:di:retriever",
-  /** Map<string|symbol, RerankerOptions> from `@Reranker()` property decorator. */
+  /**
+   * Map<string|symbol, RerankerOptions> from `@Reranker()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   RERANKER: "getloopscale:di:reranker",
-  /** Map<string|symbol, TextSplitterOptions> from `@TextSplitter()` property decorator. */
+  /**
+   * Map<string|symbol, TextSplitterOptions> from `@TextSplitter()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   TEXT_SPLITTER: "getloopscale:di:text-splitter",
-  /** Map<string|symbol, MemoryScopeOptions> from `@MemoryScopeDecorator()` property decorator. */
+  /**
+   * Map<string|symbol, MemoryScopeOptions> from `@MemoryScopeDecorator()` property decorator.
+   *
+   * @deprecated Owned by @getloopscale/loopzero-di-agent as AGENT_METADATA_KEYS. Kept for compatibility; removed in the next major.
+   */
   MEMORY_SCOPE: "getloopscale:di:memory-scope",
 } as const;
 
