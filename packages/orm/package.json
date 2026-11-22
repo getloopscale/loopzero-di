@@ -66,7 +66,7 @@
     "LoopZero"
   ],
   "peerDependencies": {
-    "@getloopscale/loopzero-di": ">=0.2.0 <0.4",
+    "@getloopscale/loopzero-di": ">=0.2.0 <0.5",
     "drizzle-orm": ">=0.36.0",
     "reflect-metadata": "^0.2.0"
   },
