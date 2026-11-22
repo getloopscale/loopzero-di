@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0
+
+### Minor Changes
+
+- 47a9e1b: `@getloopscale/loopzero-di-agent` owns its metadata keys (`AGENT_METADATA_KEYS`, same strings as before) and marks
+  the fourteen decorators nothing reads, with their `read*Metadata` functions, `@deprecated`. Nothing is
+  removed; `@Workflow` and `@Step` are unchanged (getloopscale/loopzero-di#82).
+
 ## 0.6.0
 
 ### Minor Changes
