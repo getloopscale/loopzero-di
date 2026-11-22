@@ -1,6 +1,6 @@
 {
   "name": "@getloopscale/loopzero-di",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Lightweight TypeScript dependency injection container for the loopzero ecosystem (foundation for @getloopscale/loopzero-orm + @getloopscale/loopzero-http). NestJS-compatible API with @Injectable, @Inject, @Module + 3 scopes (SINGLETON/TRANSIENT/REQUEST) + agent-aware via @getloopscale/loopzero-di-agent.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/getloopscale/loopzero-di#readme",
