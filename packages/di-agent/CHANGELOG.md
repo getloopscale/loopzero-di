@@ -1,12 +1,5 @@
 # Changelog
 
-## 0.7.1
-
-### Patch Changes
-
-- 960a1e2: The `@getloopscale/loopzero-di` peer range now admits 0.4 (`<0.5`), so the next minor of `@getloopscale/loopzero-di`, which only
-  deprecates metadata keys, does not strand these packages.
-
 ## 0.7.0
 
 ### Minor Changes

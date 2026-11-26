@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The packages in this repository are published under the `@getloopscale` scope as `@getloopscale/loopzero-<name>`, following the framework's new name, LoopZero. Imports, `LOOPZERO_*` environment variables, the `.loopzero/` directory and exported symbols carry the new name, and nothing answers to the previous one. Update every import and script when upgrading.
 - Node pinned to 22.12.0 and pnpm to 10.34.1 across the repository, resolved from `.nvmrc` and
   `packageManager` so each has a single place to change. CI previously tested the newest 22.x and
   never the 22.12.0 floor that `engines` declares (#38)
