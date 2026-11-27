@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/loopzero-logo-on-dark.svg">
+    <img src="./assets/loopzero-logo-on-light.svg" alt="LoopZero" height="40">
+  </picture>
+</p>
+
 # loopzero-di
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
